@@ -65,7 +65,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 return (
     <>
     <GuardDashboard/>
-    <Paper elevation={16} sx={{marginTop:'50px',marginLeft:'30px' , marginRight:'30px' }}>
+    <Paper elevation={16} sx={{marginTop:'60px',marginLeft:'30px' , marginRight:'30px' }}>
          <TableContainer component={Paper}>
     <Table sx={{ minWidth: 700,}} aria-label="customized table">
         <TableHead>

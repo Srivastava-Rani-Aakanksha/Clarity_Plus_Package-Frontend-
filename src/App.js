@@ -6,6 +6,7 @@ import UserFormPage from './components/UserFormPage';
 import GuardAddOrderPage from './components/GuardAddOrderPage';
 import SearchPage from './components/SearchPage';
 import Footer from './components/Footer';
+import GuardLandingPage from './components/GuardLandingPage';
 
 export const theme = createTheme({
   palette: {
@@ -38,7 +39,8 @@ function App() {
       <Routes>
         <Route exact path='/userformpage' element={<UserFormPage/>}/>
         <Route exact path='/guardaddorderpage' element={<GuardAddOrderPage/>}/> 
-        <Route exact path='/Searchpage' element={<SearchPage/>}/>
+        <Route exact path='/searchpage' element={<SearchPage/>}/>
+        <Route exact path='/guardlandingpage' element={<GuardLandingPage/>}/>
       </Routes>
     </BrowserRouter>
     <Footer/>
