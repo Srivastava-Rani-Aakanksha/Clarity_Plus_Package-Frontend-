@@ -11,11 +11,13 @@ const Header=()=> {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
+        <a href="https://www.iiitb.ac.in/" style={{ textDecoration: 'none',color: 'white', }}>
           <Typography variant="h4" component="div" sx={{ flexGrow: 1, textDecoration: 'none',
       '&:hover': {
         textDecoration: 'underline',}}}>
             Clarity Plus Package
           </Typography>
+          </a>
           <img
             src= {imgPath}
             style={{ width: 160, height: 90, marginLeft: 'auto' }}

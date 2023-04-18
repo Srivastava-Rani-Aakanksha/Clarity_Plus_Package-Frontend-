@@ -7,6 +7,8 @@ const GuardLandingPage =() =>
     return(
         <>
         <GuardDashboard/>
+        <img src={imgPath} style={{ display: "block", margin: "auto", width: "25%", height: "25%", textAlign: "center", verticalAlign: "middle",marginTop:"60px" }} />
+
         </>
     )
 }
