@@ -95,7 +95,7 @@ const UserFormPage=() =>{
                                 type="submit"
                                 fullWidth
                                 variant="contained"
-                                sx={{ mt: 1}}
+                                sx={{ mt: 1,backgroundColor:'#4fc3f7'}}
                             >
                                 Submit
                             </Button>

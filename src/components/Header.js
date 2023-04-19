@@ -9,7 +9,7 @@ import imgPath from "./Images/unnamed.jpg"
 const Header=()=> {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" sx={{backgroundColor:'#4fc3f7'}}>
         <Toolbar>
         <a href="https://www.iiitb.ac.in/" style={{ textDecoration: 'none',color: 'white', }}>
           <Typography variant="h4" component="div" sx={{ flexGrow: 1, textDecoration: 'none',
