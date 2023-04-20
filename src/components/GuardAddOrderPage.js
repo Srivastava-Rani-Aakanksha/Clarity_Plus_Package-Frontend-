@@ -41,6 +41,21 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   
   function GuardAddOrderPage() {
 
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [orderId, setOrderId] = useState('');
+    const [instituteId, setInstituteId] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
+    const [retailer, setRetailer] = useState('');
+    
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      console.log({
+        inputField,
+      });
+      
+    };
+
     const [inputField,setInputFields] =useState([
         {orderid : "",firstname:"",lastname:"",retailer:""}
     ])
@@ -67,7 +82,7 @@ return (
     <GuardDashboard/>
     <Paper elevation={16} sx={{marginTop:'60px',marginLeft:'30px' , marginRight:'30px' }}>
          <TableContainer component={Paper}>
-    <Table sx={{ minWidth: 700,}} aria-label="customized table">
+    <Table component="form" onSubmit={handleSubmit} sx={{ minWidth: 700,}} aria-label="customized table">
         <TableHead>
         <TableRow>
             <StyledTableCell align="center" >Order Id</StyledTableCell>
@@ -124,9 +139,7 @@ return (
             </StyledTableRow>
         ))}
         </TableBody>
-    </Table>
-    </TableContainer>
-    {inputField.length<=4 && <Button
+        <Button
         sx={{backgroundColor: "#e3f2fd" , mt: 1,color: "#0d47a1"}}
         type="submit"
         fullWidth
@@ -135,12 +148,19 @@ return (
         onClick={addFields}
     >
         Add more +
-    </Button>}
+    </Button>
     <Button type="submit"
         fullWidth
-        variant="outline" sx={{marginTop:'20px' , backgroundColor: "#e3f2fd" , mt: 1,color: "#0d47a1"}}>
+        variant="outline" sx={{marginTop:'20px' , 
+        backgroundColor: "#e3f2fd" ,
+         mt: 1,color: "#0d47a1"}}
+         
+    >
         Submit Details
     </Button>
+    </Table>
+    </TableContainer>
+    
     </Paper> 
     </>  
 );

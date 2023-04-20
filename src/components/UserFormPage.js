@@ -1,4 +1,4 @@
-import React from 'react';
+import React , {useState} from 'react';
 import { Button,TextField,Box,Grid
 ,Typography, FormControl,Paper,} from "@mui/material";
 import InputLabel from '@mui/material/InputLabel';
@@ -8,6 +8,32 @@ import Select, { SelectChangeEvent } from '@mui/material/Select';
 import Header from "./Header";
 
 const UserFormPage=() =>{
+
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [orderId, setOrderId] = useState('');
+    const [instituteId, setInstituteId] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
+    const [retailer, setRetailer] = useState('');
+    
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      console.log({
+        firstName,
+        lastName,
+        orderId,
+        instituteId,
+        phoneNumber,
+        retailer
+      });
+      setFirstName('');
+      setLastName('');
+      setOrderId('');
+      setInstituteId('');
+      setPhoneNumber('');
+      setRetailer('');
+      
+    };
    
     return(
         <>
@@ -19,7 +45,7 @@ const UserFormPage=() =>{
                 backgroundColor:'primary.light'}}}>Fill Your Order Details</Typography>
 
                 <Box component="form" sx={{backgroundColor:'white'}} 
-                    // onSubmit={handleSubmit}
+                    onSubmit={handleSubmit}
                     >
                     <Grid container spacing={4} alignItems="center" justifyContent="center" sx={{ marginTop:'10px'}}>
                         <Grid item xs={12} sm={6.1} >
@@ -29,6 +55,8 @@ const UserFormPage=() =>{
                             fullWidth
                             label="First Name"
                             name="firstName"
+                            value={firstName}
+                            onChange={(e) =>setFirstName(e.target.value)}
                             />
                     </Grid>
                     <Grid item xs={12} sm={6.1} >
@@ -37,7 +65,8 @@ const UserFormPage=() =>{
                             fullWidth
                             label="Last Name"
                             name="lastName"
-                        
+                            value={lastName}
+                            onChange={(e) =>setLastName(e.target.value)}
                         />
                         </Grid>
                         <Grid item xs={12} sm={6.1} >
@@ -47,7 +76,8 @@ const UserFormPage=() =>{
                             fullWidth
                             label="Order ID"
                             name="orderid"
-                        
+                            value={orderId}
+                            onChange={(e) =>setOrderId(e.target.value)}
                         />
                         </Grid>
                         <Grid item xs={12} sm={6.1} >
@@ -57,7 +87,8 @@ const UserFormPage=() =>{
                             fullWidth
                             label="Institute ID"
                             name="instituteid"
-                        
+                            value={instituteId}
+                            onChange={(e) =>setInstituteId(e.target.value)}
                         />
                         </Grid>
                         <Grid item xs={12} sm={6.1} >
@@ -67,6 +98,8 @@ const UserFormPage=() =>{
                         fullWidth
                         label="Phone Number"
                         name="Phone Number"
+                        value={phoneNumber}
+                        onChange={(e) =>setPhoneNumber(e.target.value)}
                         inputProps={{ maxLength: 10 }} 
                         InputProps={{ inputMode: 'tel' }} 
         
@@ -78,15 +111,15 @@ const UserFormPage=() =>{
                         <Select
                             labelId="demo-simple-select-autowidth-label"
                             id="demo-simple-select-autowidth"
-                            label="Age *" >
-                            <MenuItem value="">
-                            <em>Others</em>
-                            </MenuItem>
+                            label="retailer *"
+                            value={retailer} 
+                            onChange={(e) =>setRetailer(e.target.value)}>
                             <MenuItem value={'Myntra'}>Myntra</MenuItem>
                             <MenuItem value={'Amazon'}>Amazon</MenuItem>
                             <MenuItem value={'Flipkart'}>Flipkart</MenuItem>
                             <MenuItem value={'Ajio'}>Ajio</MenuItem>
                             <MenuItem value={'Blue-Dart'}>Blue-Dart</MenuItem>
+                            <MenuItem value={'Urbanic'}>Urbanic</MenuItem>
                         </Select>
                         </FormControl>
                         </Grid>

@@ -41,6 +41,7 @@ function App() {
         <Route exact path='/guardaddorderpage' element={<GuardAddOrderPage/>}/> 
         <Route exact path='/searchpage' element={<SearchPage/>}/>
         <Route exact path='/guardlandingpage' element={<GuardLandingPage/>}/>
+        <Route exact path='https://www.iiitb.ac.in/'/>
       </Routes>
     </BrowserRouter>
     <Footer/>
