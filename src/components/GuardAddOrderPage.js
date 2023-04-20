@@ -1,5 +1,5 @@
 import React , { useState } from 'react';
-import {  Button,TextField} from '@mui/material';
+import {  Button,TextField,Select,FormControl} from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -8,6 +8,8 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem'; 
 
 import GuardDashboard from './GuardDashboard';
 
@@ -41,19 +43,12 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   
   function GuardAddOrderPage() {
 
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [orderId, setOrderId] = useState('');
-    const [instituteId, setInstituteId] = useState('');
-    const [phoneNumber, setPhoneNumber] = useState('');
-    const [retailer, setRetailer] = useState('');
     
     const handleSubmit = (e) => {
-      e.preventDefault();
+      // e.preventDefault();
       console.log({
         inputField,
       });
-      
     };
 
     const [inputField,setInputFields] =useState([
@@ -61,9 +56,10 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     ])
 
     const handleFormChange=(index,event)=>{
-        let data=[...inputField]
-        data[index][event.target.name]=event.target.value;
-        setInputFields(data)
+      const { name, value } = event.target;
+      let data = [...inputField];
+        data[index][name] = value;
+      setInputFields(data);
     }
 
     const addFields=(event)=>{
