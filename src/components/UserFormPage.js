@@ -6,6 +6,7 @@ import MenuItem from '@mui/material/MenuItem';
 import imgPath from './Images/service-fast-delivery-parcels-vector-illustration-express-delivery-courier-service-smiling-man-courier-orange-uniform-with-box-his-hands-flat-style-eps-10_669518-23.avif';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import Header from "./Header";
+import axios from "axios";
 
 const UserFormPage=() =>{
 
@@ -17,22 +18,28 @@ const UserFormPage=() =>{
     const [retailer, setRetailer] = useState('');
     
     const handleSubmit = (e) => {
-      e.preventDefault();
-      console.log({
-        firstName,
-        lastName,
-        orderId,
-        instituteId,
-        phoneNumber,
-        retailer
+        e.preventDefault();
+        const data = {
+        RecipientFirstName:firstName,
+        RecipientLastName:lastName,
+        OrderID:orderId,
+        InstituteID:instituteId,
+        RecipientPhoneNumber:phoneNumber,
+        Retailer:retailer
+    };
+      axios.post(`http://localhost:9002/recipient/savedata`,data)
+      .then(response=>{
+        console.log(response);
+        setFirstName('');
+        setLastName('');
+        setOrderId('');
+        setInstituteId('');
+        setPhoneNumber('');
+        setRetailer('');
+      })
+      .catch(error=>{
+        console.error(error);
       });
-      setFirstName('');
-      setLastName('');
-      setOrderId('');
-      setInstituteId('');
-      setPhoneNumber('');
-      setRetailer('');
-      
     };
    
     return(
@@ -93,35 +100,36 @@ const UserFormPage=() =>{
                         </Grid>
                         <Grid item xs={12} sm={6.1} >
                         <TextField
-                        variant="outlined"
-                        required
-                        fullWidth
-                        label="Phone Number"
-                        name="Phone Number"
-                        value={phoneNumber}
-                        onChange={(e) =>setPhoneNumber(e.target.value)}
-                        inputProps={{ maxLength: 10 }} 
-                        InputProps={{ inputMode: 'tel' }} 
-        
+                            variant="outlined"
+                            required
+                            fullWidth
+                            label="Phone Number"
+                            name="Phone Number"
+                            value={phoneNumber}
+                            onChange={(e) =>setPhoneNumber(e.target.value)}
+                            inputProps={{ maxLength: 10 }} 
+                            InputProps={{ inputMode: 'tel' }} 
+            
                         />
                         </Grid>
                         <Grid item xs={12} sm={6.1} >
-                        <FormControl required sx={{ minWidth: 200 }}>
-                        <InputLabel id="demo-simple-select-autowidth-label">Retailer</InputLabel>
-                        <Select
-                            labelId="demo-simple-select-autowidth-label"
-                            id="demo-simple-select-autowidth"
-                            label="retailer *"
-                            value={retailer} 
-                            onChange={(e) =>setRetailer(e.target.value)}>
-                            <MenuItem value={'Myntra'}>Myntra</MenuItem>
-                            <MenuItem value={'Amazon'}>Amazon</MenuItem>
-                            <MenuItem value={'Flipkart'}>Flipkart</MenuItem>
-                            <MenuItem value={'Ajio'}>Ajio</MenuItem>
-                            <MenuItem value={'Blue-Dart'}>Blue-Dart</MenuItem>
-                            <MenuItem value={'Urbanic'}>Urbanic</MenuItem>
-                        </Select>
-                        </FormControl>
+                            <FormControl required sx={{ minWidth: 200 }}>
+                                <InputLabel id="demo-simple-select-autowidth-label">retailer
+                                </InputLabel>
+                                <Select
+                                    labelId="demo-simple-select-autowidth-label"
+                                    id="demo-simple-select-autowidth"
+                                    label="retailer *"
+                                    value={retailer} 
+                                    onChange={(e) =>setRetailer(e.target.value)}>
+                                    <MenuItem value={'Myntra'}>Myntra</MenuItem>
+                                    <MenuItem value={'Amazon'}>Amazon</MenuItem>
+                                    <MenuItem value={'Flipkart'}>Flipkart</MenuItem>
+                                    <MenuItem value={'Ajio'}>Ajio</MenuItem>
+                                    <MenuItem value={'Blue-Dart'}>Blue-Dart</MenuItem>
+                                    <MenuItem value={'Urbanic'}>Urbanic</MenuItem>
+                                </Select>
+                            </FormControl>
                         </Grid>
                         <Grid item xs={12} sm={6.1} >
                         <Button 
