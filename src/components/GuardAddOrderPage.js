@@ -8,8 +8,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem'; 
+import axios from 'axios';
 
 import GuardDashboard from './GuardDashboard';
 
@@ -35,7 +34,12 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   }));
   
   function createData(orderid,firstname, lastname,retailer) {
-    return { orderid,firstname, lastname,retailer };
+    return { OrderID:orderid,
+      FirstName:firstname, 
+      LastName:lastname,
+      DateofDelivery: new Date().toISOString().slice(0,10), 
+      Retailer:retailer
+    };
   }
   
   
@@ -45,10 +49,16 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 
     
     const handleSubmit = (e) => {
-      // e.preventDefault();
-      console.log({
-        inputField,
-      });
+      e.preventDefault();
+      const dataToSend = inputField.map((field) => createData(field.orderid, field.firstname, field.lastname, field.retailer));
+      console.log(dataToSend);
+      // axios.post(`http://localhost:9001/order/saveorderdata`,dataToSend)
+      // .then(response=>{
+      //   console.log(response);
+      // })
+      // .catch(error=>{
+      //   console.error(error);
+      // });
     };
 
     const [inputField,setInputFields] =useState([
