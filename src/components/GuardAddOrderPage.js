@@ -27,7 +27,6 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     '&:nth-of-type(odd)': {
       backgroundColor: theme.palette.action.hover,
     },
-    // hide last border
     '&:last-child td, &:last-child th': {
       border: 0,
     },
@@ -57,11 +56,9 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     }
 
     const handleSubmit = (e) => {
-      // e.preventDefault();
       const dataToSend = inputField.map((field) => createData(field.orderid, field.firstname, field.lastname, field.retailer));
       console.log(dataToSend);
       const response = axios.post(`http://localhost:9001/order/saveorderdata`,dataToSend);
-      //console.log('API response:', response.data);
     };
 
 
