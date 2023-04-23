@@ -27,7 +27,7 @@ const UserFormPage=() =>{
         RecipientPhoneNumber:phoneNumber,
         Retailer:retailer
     };
-      axios.post(`http://localhost:9002/recipient/savedata`,data)
+      const response = axios.post(`http://localhost:9002/recipient/savedata`,data)
       .then(response=>{
         console.log(response);
         setFirstName('');
@@ -36,6 +36,7 @@ const UserFormPage=() =>{
         setInstituteId('');
         setPhoneNumber('');
         setRetailer('');
+        alert('Data submitted successfully !')
       })
       .catch(error=>{
         console.error(error);
@@ -47,7 +48,6 @@ const UserFormPage=() =>{
          <Header/>
         <Grid container spacing={2}>
             <Grid item xs={8} >
-                <Paper sx={{padding:'32px'}} elevation={2}>
                 <Typography variant="h5" sx={{ textAlign: 'center' , marginTop:'30px',  '&:hover': {
                 backgroundColor:'primary.light'}}}>Fill Your Order Details</Typography>
 
@@ -144,7 +144,6 @@ const UserFormPage=() =>{
                 
                     </Grid> 
                 </Box> 
-                </Paper>
             </Grid>
            <Grid item xs={4}>
            <img

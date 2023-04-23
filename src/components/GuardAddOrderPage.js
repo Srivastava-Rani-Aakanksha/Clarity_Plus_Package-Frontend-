@@ -37,40 +37,33 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     return { OrderID:orderid,
       FirstName:firstname, 
       LastName:lastname,
-      DateofDelivery: new Date().toISOString().slice(0,10), 
+      DateOfDelivery: new Date().toISOString().slice(0,10), 
       Retailer:retailer
     };
   }
   
-  
-
-  
   function GuardAddOrderPage() {
 
-    
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      const dataToSend = inputField.map((field) => createData(field.orderid, field.firstname, field.lastname, field.retailer));
-      console.log(dataToSend);
-      // axios.post(`http://localhost:9001/order/saveorderdata`,dataToSend)
-      // .then(response=>{
-      //   console.log(response);
-      // })
-      // .catch(error=>{
-      //   console.error(error);
-      // });
-    };
 
     const [inputField,setInputFields] =useState([
-        {orderid : "",firstname:"",lastname:"",retailer:""}
-    ])
+      {orderid : "",firstname:"",lastname:"",retailer:""}
+    ])  
 
-    const handleFormChange=(index,event)=>{
-      const { name, value } = event.target;
-      let data = [...inputField];
-        data[index][name] = value;
-      setInputFields(data);
+    const handleFormChange=(index,e)=>{
+      let data=[...inputField]
+      data[index][e.target.name]=e.target.value;
+      setInputFields(data)
+      console.log(data);
     }
+
+    const handleSubmit = (e) => {
+      // e.preventDefault();
+      const dataToSend = inputField.map((field) => createData(field.orderid, field.firstname, field.lastname, field.retailer));
+      console.log(dataToSend);
+      const response = axios.post(`http://localhost:9001/order/saveorderdata`,dataToSend);
+      //console.log('API response:', response.data);
+    };
+
 
     const addFields=(event)=>{
         event.preventDefault();
