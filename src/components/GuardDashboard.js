@@ -9,12 +9,12 @@ function GuardDashboard() {
 
   return (
     <>
-      <AppBar position="static" sx={{  height: "90px" , backgroundColor:"#64b5f6"}}>
+      <AppBar position="static" sx={{  height: "90px" , backgroundColor:"#0d47a1"}}>
         <Toolbar>
             <Avatar sx={{marginTop:'20px', marginRight:'2opx',bgcolor: '#9e9e9e'}} > G </Avatar>
             <Typography variant="h6" sx={{ flexGrow: 1,
               fontWeight: 700,
-              color: '#1565c0',
+              color: 'white',
               fontSize: '1.6rem',
               textDecoration: 'none',
               marginTop:"20px",
@@ -23,7 +23,7 @@ function GuardDashboard() {
             </Typography>
             <Button  sx={{ flexGrow:0,
               fontWeight: 700,
-              color: '#1565c0',
+              color: 'white',
               textDecoration:'underline',
               fontSize: '1.2rem',
               marginTop:"20px",
@@ -33,7 +33,7 @@ function GuardDashboard() {
             </Button>
             <Button sx={{ 
               fontWeight: 700,
-              color: '#1565c0',
+              color: 'white',
               textDecoration: 'underline',
               fontSize: '1.2rem',
               marginTop:"20px",
@@ -42,7 +42,7 @@ function GuardDashboard() {
             </Button>
             <Button sx={{ 
                 fontWeight: 700,
-                color: '#1565c0',
+                color: 'white',
                 textDecoration: 'underline',
                 fontSize: '1.2rem',
                 marginTop:"20px",}}  href="https://twitter.com">
