@@ -1,15 +1,12 @@
 import React , {useState} from 'react';
-import { Button,TextField,Box,Grid
+import { Button,TextField,Box,Grid ,Paper
 ,Typography, FormControl} from "@mui/material";
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem'; 
 import imgPath from './Images/service-fast-delivery-parcels-vector-illustration-express-delivery-courier-service-smiling-man-courier-orange-uniform-with-box-his-hands-flat-style-eps-10_669518-23.avif';
 import Select from '@mui/material/Select';
 import Header from "./Header";
-<<<<<<< HEAD
-=======
 import axios from "axios";
->>>>>>> 4f241f581e084fe3738929e31f4284abc692aeeb
 
 const UserFormPage=() =>{
 
@@ -19,38 +16,20 @@ const UserFormPage=() =>{
     const [instituteId, setInstituteId] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [retailer, setRetailer] = useState('');
-    const [isOtherSelected, setIsOtherSelected] = useState(false);
-    const [otherRetailer, setOtherRetailer] = useState('');
+    // const [isOtherSelected, setIsOtherSelected] = useState(false);
+    // const [otherRetailer, setOtherRetailer] = useState('');
 
-    const handleRetailerChange = (e) => {
-        const value = e.target.value;
-        setRetailer(value);
-        setIsOtherSelected(value === '');
-    };
+    // const handleRetailerChange = (e) => {
+    //     const value = e.target.value;
+    //     setRetailer(value);
+    //     setIsOtherSelected(value === '');
+    // };
 
-    const handleOtherRetailerChange = (e) => {
-        setOtherRetailer(e.target.value);
-    };
+    // const handleOtherRetailerChange = (e) => {
+    //     setOtherRetailer(e.target.value);
+    // };
     
     const handleSubmit = (e) => {
-<<<<<<< HEAD
-      e.preventDefault();
-      console.log({
-        firstName,
-        lastName,
-        orderId,
-        instituteId,
-        phoneNumber,
-        retailer
-      });
-      setFirstName('');
-      setLastName('');
-      setOrderId('');
-      setInstituteId('');
-      setPhoneNumber('');
-      setRetailer('');
-      
-=======
         e.preventDefault();
         const data = {
         RecipientFirstName:firstName,
@@ -74,7 +53,6 @@ const UserFormPage=() =>{
       .catch(error=>{
         console.error(error);
       });
->>>>>>> 4f241f581e084fe3738929e31f4284abc692aeeb
     };
    
     return(
@@ -82,10 +60,7 @@ const UserFormPage=() =>{
          <Header/>
         <Grid container spacing={2}>
             <Grid item xs={8} >
-<<<<<<< HEAD
                 <Paper sx={{padding:'32px'}} elevation={2}>
-=======
->>>>>>> 4f241f581e084fe3738929e31f4284abc692aeeb
                 <Typography variant="h5" sx={{ textAlign: 'center' , marginTop:'30px',  '&:hover': {
                 backgroundColor:'primary.light'}}}>Fill Your Order Details</Typography>
 
@@ -138,7 +113,6 @@ const UserFormPage=() =>{
                         </Grid>
                         <Grid item xs={12} sm={6.1} >
                         <TextField
-<<<<<<< HEAD
                         variant="outlined"
                         required
                         fullWidth
@@ -152,36 +126,6 @@ const UserFormPage=() =>{
                         />
                         </Grid>
                         <Grid item xs={12} sm={6.1} >
-                        <FormControl required sx={{ minWidth: 200 }}>
-                        <InputLabel id="demo-simple-select-autowidth-label">Retailer</InputLabel>
-                        <Select
-                            labelId="demo-simple-select-autowidth-label"
-                            id="demo-simple-select-autowidth"
-                            label="retailer *"
-                            value={retailer} 
-                            onChange={(e) =>setRetailer(e.target.value)}>
-                            <MenuItem value={'Myntra'}>Myntra</MenuItem>
-                            <MenuItem value={'Amazon'}>Amazon</MenuItem>
-                            <MenuItem value={'Flipkart'}>Flipkart</MenuItem>
-                            <MenuItem value={'Ajio'}>Ajio</MenuItem>
-                            <MenuItem value={'Blue-Dart'}>Blue-Dart</MenuItem>
-                            <MenuItem value={'Urbanic'}>Urbanic</MenuItem>
-                        </Select>
-                        </FormControl>
-=======
-                            variant="outlined"
-                            required
-                            fullWidth
-                            label="Phone Number"
-                            name="Phone Number"
-                            value={phoneNumber}
-                            onChange={(e) =>setPhoneNumber(e.target.value)}
-                            inputProps={{ maxLength: 10 }} 
-                            InputProps={{ inputMode: 'tel' }} 
-            
-                        />
-                        </Grid>
-                        <Grid item xs={12} sm={6.1} >
                             <FormControl required sx={{ minWidth: 200 }}>
                                 <InputLabel id="demo-simple-select-autowidth-label">Retailer
                                 </InputLabel>
@@ -190,8 +134,8 @@ const UserFormPage=() =>{
                                     id="demo-simple-select-autowidth"
                                     label="Retailer "
                                     value={retailer} 
-                                    onChange={handleRetailerChange}
-                                    // onChange={(e) =>setRetailer(e.target.value)} 
+                                    // onChange={handleRetailerChange}
+                                    onChange={(e) =>setRetailer(e.target.value)} 
                                     >
                                     <MenuItem value={'Myntra'}>Myntra</MenuItem>
                                     <MenuItem value={'Amazon'}>Amazon</MenuItem>
@@ -202,9 +146,8 @@ const UserFormPage=() =>{
                                     <MenuItem value={''}>Other</MenuItem>
                                 </Select>
                             </FormControl>
->>>>>>> 4f241f581e084fe3738929e31f4284abc692aeeb
                         </Grid>
-                        {isOtherSelected && (
+                        {/* {isOtherSelected && (
                             <Grid item xs={12} sm={6}>
                             <TextField
                                 id="other-retailer"
@@ -213,7 +156,7 @@ const UserFormPage=() =>{
                                 onChange={handleOtherRetailerChange}
                             />
                             </Grid>
-                        )}
+                        )} */}
 
                         <Grid item xs={12} sm={6.1} >
                         <Button 
@@ -228,10 +171,7 @@ const UserFormPage=() =>{
                 
                     </Grid> 
                 </Box> 
-<<<<<<< HEAD
                 </Paper>
-=======
->>>>>>> 4f241f581e084fe3738929e31f4284abc692aeeb
             </Grid>
            <Grid item xs={4}>
            <img

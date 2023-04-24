@@ -8,12 +8,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-<<<<<<< HEAD
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem'; 
-=======
 import axios from 'axios';
->>>>>>> 4f241f581e084fe3738929e31f4284abc692aeeb
 
 import GuardDashboard from './GuardDashboard';
 
@@ -32,56 +27,25 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     '&:nth-of-type(odd)': {
       backgroundColor: theme.palette.action.hover,
     },
-<<<<<<< HEAD
     // hide last border
-=======
->>>>>>> 4f241f581e084fe3738929e31f4284abc692aeeb
     '&:last-child td, &:last-child th': {
       border: 0,
     },
   }));
   
-  function createData(orderid,firstname, lastname,retailer) {
-<<<<<<< HEAD
-    return { orderid,firstname, lastname,retailer };
-  }
   
-  
-
   
   function GuardAddOrderPage() {
 
-    
-    const handleSubmit = (e) => {
-      // e.preventDefault();
-      console.log({
-        inputField,
-      });
-    };
-
-    const [inputField,setInputFields] =useState([
-        {orderid : "",firstname:"",lastname:"",retailer:""}
-    ])
-
-    const handleFormChange=(index,event)=>{
-      const { name, value } = event.target;
-      let data = [...inputField];
-        data[index][name] = value;
-      setInputFields(data);
+    function createData(orderid,firstname, lastname,retailer)
+    {
+      return { OrderID:orderid,
+        FirstName:firstname, 
+        LastName:lastname,
+        DateOfDelivery: new Date().toISOString().slice(0,10), 
+        Retailer:retailer
+      };
     }
-
-=======
-    return { OrderID:orderid,
-      FirstName:firstname, 
-      LastName:lastname,
-      DateOfDelivery: new Date().toISOString().slice(0,10), 
-      Retailer:retailer
-    };
-  }
-  
-  function GuardAddOrderPage() {
-
-
     const [inputField,setInputFields] =useState([
       {orderid : "",firstname:"",lastname:"",retailer:""}
     ])  
@@ -94,23 +58,18 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     }
 
     const handleSubmit = (e) => {
+      //e.preventDefault();
       const dataToSend = inputField.map((field) => createData(field.orderid, field.firstname, field.lastname, field.retailer));
       console.log(dataToSend);
       const response = axios.post(`http://localhost:9001/order/saveorderdata`,dataToSend);
     };
 
 
->>>>>>> 4f241f581e084fe3738929e31f4284abc692aeeb
     const addFields=(event)=>{
         event.preventDefault();
         let newField={orderid : "",firstname:"",lastname:"",retailer:""}
         setInputFields([...inputField,newField])
     }
-    // const removeFields=(index)=>{
-    //     let data=[...inputField]
-    //     data.slice(index,)
-    //     setInputFields(data)
-    // }
 
 return (
     <>
@@ -168,9 +127,6 @@ return (
                         value={input.retailer}
                         onChange={(e)=>handleFormChange(index,e)}/>
                 </StyledTableCell>
-                {/* <StyledTableCell >
-                    <button onClick={()=>removeFields(index)}> remove </button>
-                </StyledTableCell> */}
             </StyledTableRow>
         ))}
         </TableBody>
