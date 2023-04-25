@@ -7,6 +7,8 @@ import GuardAddOrderPage from './components/GuardAddOrderPage';
 import Footer from './components/Footer';
 import GuardLandingPage from './components/GuardLandingPage';
 import GuardSearchPage from './components/GuardSearchPage';
+import SearchLogByDate from './components/SearchLogByDate';
+
 
 export const theme = createTheme({
   palette: {
@@ -41,6 +43,7 @@ function App() {
         <Route exact path='/guardaddorderpage' element={<GuardAddOrderPage/>}/> 
         <Route exact path='/searchInstituteID' element={<GuardSearchPage/>}/>
         <Route exact path='/guardlandingpage' element={<GuardLandingPage/>}/>
+        <Route exact path='/searchlogs' element={<SearchLogByDate/>}/>
       </Routes>
     </BrowserRouter>
     {/* <Footer/> */}
