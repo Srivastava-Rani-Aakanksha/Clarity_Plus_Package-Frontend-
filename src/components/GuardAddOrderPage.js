@@ -57,7 +57,7 @@ function GuardAddOrderPage() {
   };
 
   const handleSubmit = (e) => {
-    //e.preventDefault();
+    // e.preventDefault();
     const dataToSend = inputField.map((field) =>
       createData(field.orderid, field.firstname, field.lastname, field.retailer)
     );

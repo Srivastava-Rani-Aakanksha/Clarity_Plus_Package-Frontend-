@@ -12,7 +12,7 @@ function GuardDashboard() {
       <AppBar position="static" sx={{  height: "90px" , backgroundColor:"#0d47a1"}}>
         <Toolbar sx={{ justifyContent: "space-between" }}>
           <div sx={{ display: "flex"}}>
-            <Avatar sx={{marginTop:'20px', marginRight:'2opx',bgcolor: '#9e9e9e', flexShrink: 0 }} > G </Avatar>
+            {/* <Avatar sx={{marginTop:'20px', marginRight:'2opx',bgcolor: '#9e9e9e', flexShrink: 0 }} > G </Avatar> */}
             <a href ='/guardlandingpage' style={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
               <Typography variant="h6" sx={{ 
                 fontWeight: 700,
@@ -43,7 +43,7 @@ function GuardDashboard() {
               textDecoration: 'underline',
               fontSize: '1.2rem',
               marginTop:"20px",
-              marginRight: "20px"}} href="/userformpage">
+              marginRight: "20px"}} href="/searchlogs">
             Logs
             </Button>
             <Button sx={{ 

@@ -141,18 +141,14 @@ function GuardSearchPage () {
               <TableRow>
                 <StyledTableCell align="center">Order Id</StyledTableCell>
                 <StyledTableCell align="center">Retailer</StyledTableCell>
-                <StyledTableCell align="center">Date Of Delivery</StyledTableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {recipientDetails.map((row) => (
                       <TableRow key = {row}
                           sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-                          <TableCell>{row}</TableCell>
-                          <TableCell align="right">
-                          </TableCell>
-                          <TableCell>
-                          </TableCell>
+                          <TableCell align="center">{row}</TableCell>
+                          <TableCell align="center"></TableCell>
                       </TableRow>
                   ))
                 }
