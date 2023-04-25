@@ -10,24 +10,30 @@ function GuardDashboard() {
   return (
     <>
       <AppBar position="static" sx={{  height: "90px" , backgroundColor:"#0d47a1"}}>
-        <Toolbar>
-            <Avatar sx={{marginTop:'20px', marginRight:'2opx',bgcolor: '#9e9e9e'}} > G </Avatar>
-            <Typography variant="h6" sx={{ flexGrow: 1,
-              fontWeight: 700,
-              color: 'white',
-              fontSize: '1.6rem',
-              textDecoration: 'none',
-              marginTop:"20px",
-              marginLeft: "10px"}}>
-            Guard
-            </Typography>
+        <Toolbar sx={{ justifyContent: "space-between" }}>
+          <div sx={{ display: "flex"}}>
+            <Avatar sx={{marginTop:'20px', marginRight:'2opx',bgcolor: '#9e9e9e', flexShrink: 0 }} > G </Avatar>
+            <a href ='/guardlandingpage' style={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
+              <Typography variant="h6" sx={{ 
+                fontWeight: 700,
+                color: 'white',
+                fontSize: '1.6rem',
+                textDecoration: 'underline',
+                marginTop:"20px",
+                marginLeft: "20px"}}>
+              Guard
+              </Typography>
+            </a> 
+            </div>
+            <div sx={{ display: "flex", alignItems: "center" }}>
             <Button  sx={{ flexGrow:0,
               fontWeight: 700,
               color: 'white',
               textDecoration:'underline',
               fontSize: '1.2rem',
               marginTop:"20px",
-              marginRight: "20px"}} 
+              marginRight: "20px",
+            }} 
               href="/guardaddorderpage">
             Add Order+
             </Button>
@@ -45,12 +51,14 @@ function GuardDashboard() {
                 color: 'white',
                 textDecoration: 'underline',
                 fontSize: '1.2rem',
-                marginTop:"20px",}}  href="https://twitter.com">
-                Search 
-            </Button>
-            <Avatar sx={{ bgcolor:'#9e9e9e',marginTop:'20px',width: 35, height: 35 }} variant="rounded">
+                marginTop:"20px",}}  href="/searchInstituteID">
+                Search By ID 
+                <Avatar sx={{ bgcolor:'#9e9e9e',marginLeft:'10px', width: 35, height: 35 }} variant="rounded">
                 <SearchIcon />
-            </Avatar>
+            </Avatar> 
+            </Button>
+            
+            </div>
         </Toolbar>
       </AppBar>
     </>
