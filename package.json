@@ -5,17 +5,30 @@
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
+<<<<<<< HEAD
     "@material-ui/core": "^4.12.4",
     "@mui/icons-material": "^5.11.16",
     "@mui/lab": "^5.0.0-alpha.126",
     "@mui/material": "^5.12.0",
     "@mui/x-date-pickers": "^6.2.1",
+=======
+    "@mui/icons-material": "^5.11.16",
+    "@mui/lab": "^5.0.0-alpha.126",
+    "@mui/material": "^5.12.1",
+>>>>>>> 08535c6ee858f5e4340dc71264d2af7f3352056b
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.3.6",
+<<<<<<< HEAD
     "dayjs": "^1.11.7",
     "react": "^18.2.0",
+=======
+    "firebase": "^8.10.1",
+    "framer-motion": "^10.12.4",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.7.4",
+>>>>>>> 08535c6ee858f5e4340dc71264d2af7f3352056b
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.10.0",
     "react-scripts": "5.0.1",

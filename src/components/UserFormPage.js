@@ -1,10 +1,10 @@
 import React , {useState} from 'react';
-import { Button,TextField,Box,Grid
-,Typography, FormControl,Paper,} from "@mui/material";
+import { Button,TextField,Box,Grid ,Paper
+,Typography, FormControl} from "@mui/material";
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem'; 
 import imgPath from './Images/service-fast-delivery-parcels-vector-illustration-express-delivery-courier-service-smiling-man-courier-orange-uniform-with-box-his-hands-flat-style-eps-10_669518-23.avif';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Select from '@mui/material/Select';
 import Header from "./Header";
 import axios from "axios";
 
@@ -16,6 +16,18 @@ const UserFormPage=() =>{
     const [instituteId, setInstituteId] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [retailer, setRetailer] = useState('');
+    // const [isOtherSelected, setIsOtherSelected] = useState(false);
+    // const [otherRetailer, setOtherRetailer] = useState('');
+
+    // const handleRetailerChange = (e) => {
+    //     const value = e.target.value;
+    //     setRetailer(value);
+    //     setIsOtherSelected(value === '');
+    // };
+
+    // const handleOtherRetailerChange = (e) => {
+    //     setOtherRetailer(e.target.value);
+    // };
     
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -113,29 +125,44 @@ const UserFormPage=() =>{
                         />
                         </Grid>
                         <Grid item xs={12} sm={6.1} >
-                        <FormControl required sx={{ minWidth: 200 }}>
-                        <InputLabel id="demo-simple-select-autowidth-label">Retailer</InputLabel>
-                        <Select
-                            labelId="demo-simple-select-autowidth-label"
-                            id="demo-simple-select-autowidth"
-                            label="retailer *"
-                            value={retailer} 
-                            onChange={(e) =>setRetailer(e.target.value)}>
-                            <MenuItem value={'Myntra'}>Myntra</MenuItem>
-                            <MenuItem value={'Amazon'}>Amazon</MenuItem>
-                            <MenuItem value={'Flipkart'}>Flipkart</MenuItem>
-                            <MenuItem value={'Ajio'}>Ajio</MenuItem>
-                            <MenuItem value={'Blue-Dart'}>Blue-Dart</MenuItem>
-                            <MenuItem value={'Urbanic'}>Urbanic</MenuItem>
-                        </Select>
-                        </FormControl>
+                            <FormControl required sx={{ minWidth: 200 }}>
+                                <InputLabel id="demo-simple-select-autowidth-label">Retailer
+                                </InputLabel>
+                                <Select
+                                    labelId="demo-simple-select-autowidth-label"
+                                    id="demo-simple-select-autowidth"
+                                    label="Retailer "
+                                    value={retailer} 
+                                    // onChange={handleRetailerChange}
+                                    onChange={(e) =>setRetailer(e.target.value)} 
+                                    >
+                                    <MenuItem value={'Myntra'}>Myntra</MenuItem>
+                                    <MenuItem value={'Amazon'}>Amazon</MenuItem>
+                                    <MenuItem value={'Flipkart'}>Flipkart</MenuItem>
+                                    <MenuItem value={'Ajio'}>Ajio</MenuItem>
+                                    <MenuItem value={'Blue-Dart'}>Blue-Dart</MenuItem>
+                                    <MenuItem value={'Urbanic'}>Urbanic</MenuItem>
+                                    <MenuItem value={''}>Other</MenuItem>
+                                </Select>
+                            </FormControl>
                         </Grid>
+                        {/* {isOtherSelected && (
+                            <Grid item xs={12} sm={6}>
+                            <TextField
+                                id="other-retailer"
+                                label="Other Retailer"
+                                value={otherRetailer}
+                                onChange={handleOtherRetailerChange}
+                            />
+                            </Grid>
+                        )} */}
+
                         <Grid item xs={12} sm={6.1} >
                         <Button 
                                 type="submit"
                                 fullWidth
                                 variant="contained"
-                                sx={{ mt: 1,backgroundColor:'#4fc3f7'}}
+                                sx={{ mt: 1,backgroundColor:'#0d47a1' }}
                             >
                                 Submit
                             </Button>

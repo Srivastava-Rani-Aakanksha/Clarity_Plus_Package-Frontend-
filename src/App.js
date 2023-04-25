@@ -41,7 +41,7 @@ function App() {
       <Routes>
         <Route exact path='/userformpage' element={<UserFormPage/>}/>
         <Route exact path='/guardaddorderpage' element={<GuardAddOrderPage/>}/> 
-        {/* <Route exact path='/searchInstituteID' element={<GuardSearchPage/>}/> */}
+        <Route exact path='/searchInstituteID' element={<GuardSearchPage/>}/>
         <Route exact path='/guardlandingpage' element={<GuardLandingPage/>}/>
         <Route exact path='/searchlogs' element={<SearchLogByDate/>}/>
       </Routes>

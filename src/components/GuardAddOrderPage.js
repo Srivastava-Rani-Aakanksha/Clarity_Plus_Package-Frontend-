@@ -34,18 +34,19 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     },
   }));
   
-  function createData(orderid,firstname, lastname,retailer) {
-    return { OrderID:orderid,
-      FirstName:firstname, 
-      LastName:lastname,
-      DateOfDelivery: new Date().toISOString().slice(0,10), 
-      Retailer:retailer
-    };
-  }
+  
   
   function GuardAddOrderPage() {
 
-
+    function createData(orderid,firstname, lastname,retailer)
+    {
+      return { OrderID:orderid,
+        FirstName:firstname, 
+        LastName:lastname,
+        DateOfDelivery: new Date().toISOString().slice(0,10), 
+        Retailer:retailer
+      };
+    }
     const [inputField,setInputFields] =useState([
       {orderid : "",firstname:"",lastname:"",retailer:""}
     ])  
@@ -58,6 +59,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     }
 
     const handleSubmit = (e) => {
+      //e.preventDefault();
       const dataToSend = inputField.map((field) => createData(field.orderid, field.firstname, field.lastname, field.retailer));
       console.log(dataToSend);
       const response = axios.post(`http://localhost:9001/order/saveorderdata`,dataToSend);
@@ -69,11 +71,6 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
         let newField={orderid : "",firstname:"",lastname:"",retailer:""}
         setInputFields([...inputField,newField])
     }
-    // const removeFields=(index)=>{
-    //     let data=[...inputField]
-    //     data.slice(index,)
-    //     setInputFields(data)
-    // }
 
 return (
     <>
@@ -131,9 +128,6 @@ return (
                         value={input.retailer}
                         onChange={(e)=>handleFormChange(index,e)}/>
                 </StyledTableCell>
-                {/* <StyledTableCell >
-                    <button onClick={()=>removeFields(index)}> remove </button>
-                </StyledTableCell> */}
             </StyledTableRow>
         ))}
         </TableBody>

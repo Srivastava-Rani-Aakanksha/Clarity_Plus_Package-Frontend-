@@ -12,7 +12,7 @@
 // import axios from 'axios';
 // import SendIcon from '@mui/icons-material/Send';
 // import Alert from '@mui/material/Alert';
-// // import 'firebase/auth';
+// import 'firebase/auth';
 // // import {sendEmailVerification, applyActionCode} from 'firebase/auth';
 // // import {auth} from './firebase'
 

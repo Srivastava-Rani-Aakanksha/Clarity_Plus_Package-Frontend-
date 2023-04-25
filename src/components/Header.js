@@ -9,9 +9,9 @@ import imgPath from "./Images/unnamed.jpg"
 const Header=()=> {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{backgroundColor:'#4fc3f7'}}>
+      <AppBar position="static" sx={{backgroundColor:'#0d47a1'}}>
         <Toolbar>
-        <a href="https://www.iiitb.ac.in/" style={{ textDecoration: 'none',color: 'white', }}>
+        <a href="https://www.iiitb.ac.in/" style={{ textDecoration: 'none',color: 'white'}}>
           <Typography variant="h4" component="div" sx={{ flexGrow: 1, textDecoration: 'none',
       '&:hover': {
         textDecoration: 'underline',}}}>
