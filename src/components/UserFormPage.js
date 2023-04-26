@@ -21,6 +21,7 @@ const UserFormPage = () => {
   const [orderId, setOrderId] = useState("");
   const [instituteId, setInstituteId] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [personalemailid,setPersonalEmailId] = useState("");
   const [retailer, setRetailer] = useState("");
   const [isOtherSelected, setIsOtherSelected] = useState(false);
   const [otherRetailer, setOtherRetailer] = useState("");
@@ -45,6 +46,7 @@ const UserFormPage = () => {
         OrderID: orderId,
         InstituteID: instituteId,
         RecipientPhoneNumber: phoneNumber,
+        PersonalEmailID: personalemailid,
         Retailer: retailer,
       };
     } else {
@@ -54,6 +56,7 @@ const UserFormPage = () => {
         OrderID: orderId,
         InstituteID: instituteId,
         RecipientPhoneNumber: phoneNumber,
+        PersonalEmailID: personalemailid,
         Retailer: otherRetailer,
       };
     }
@@ -67,6 +70,7 @@ const UserFormPage = () => {
         setOrderId("");
         setInstituteId("");
         setPhoneNumber("");
+        setPersonalEmailId("");
         setRetailer("");
         setOtherRetailer("");
         alert("Data submitted successfully !");
@@ -85,10 +89,7 @@ const UserFormPage = () => {
               variant="h5"
               sx={{
                 textAlign: "center",
-                marginTop: "30px",
-                "&:hover": {
-                  backgroundColor: "primary.light",
-                },
+                marginTop: "20px",
               }}
             >
               Fill Your Order Details
@@ -104,7 +105,7 @@ const UserFormPage = () => {
                 spacing={4}
                 alignItems="center"
                 justifyContent="center"
-                sx={{ marginTop: "10px" }}
+                sx={{ marginTop: "1px" }}
               >
                 <Grid item xs={12} sm={6.1}>
                   <TextField
@@ -163,6 +164,17 @@ const UserFormPage = () => {
                   />
                 </Grid>
                 <Grid item xs={12} sm={6.1}>
+                  <TextField
+                    variant="outlined"
+                    required
+                    fullWidth
+                    label="Personal Email Id"
+                    name="Personal Email Id"
+                    value={personalemailid}
+                    onChange={(e) => setPersonalEmailId(e.target.value)}
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6.1}>
                   <FormControl required sx={{ minWidth: 200 }}>
                     <InputLabel id="demo-simple-select-autowidth-label">
                       Retailer
@@ -186,7 +198,7 @@ const UserFormPage = () => {
                   </FormControl>
                 </Grid>
                 {isOtherSelected && (
-                  <Grid item xs={12} sm={6}>
+                  <Grid item xs={12} sm={6.1}>
                     <TextField
                       id="other-retailer"
                       label="Other Retailer"
