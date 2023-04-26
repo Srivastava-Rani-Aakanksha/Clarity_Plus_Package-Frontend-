@@ -46,17 +46,8 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 function GuardSearchPage () {
 
     const [searchID, setSearchID] = useState('');
-
-    const [loading, setLoading] = useState(false);
-
     const [recipientDetails, setRecipientDetails] = useState([]);
-
-    const [verificationCode, setVerificationCode] = useState('');
-
-    const [verificationSuccess, setVerificationSuccess] = useState(false);
-
-    const [verificationError, setVerificationError] = useState(null);
-
+    
     const handleSearchID = (e) => {
         setSearchID(e.target.value);
     };
@@ -70,25 +61,6 @@ function GuardSearchPage () {
           setRecipientDetails(response.data);
       })
     };
-    // const email = "yasha.dayal@iiitb.ac.in";
-    // const sendVerificationCode = async () => {
-    //   await auth.sendEmailVerification(email);
-    //   console.log('Verification code sent to', email);
-    // };
-
-//   const verifyCode = () => {
-//     applyActionCode(auth, verificationCode)
-//     .then(() => {
-//       console.log('Verification successful');
-//       setVerificationSuccess(true);
-//       setVerificationError(null);
-//     })
-//     .catch(error => {
-//       console.error('Error verifying code:', error);
-//       setVerificationSuccess(false);
-//       setVerificationError(error.message);
-//     });
-//   };
 
   return (
     <>
@@ -108,31 +80,6 @@ function GuardSearchPage () {
       </Form>
       <Paper elevation={16}
         sx={{ marginTop: "40px", marginLeft: "80px", marginRight: "80px" }}>
-      {/* <TableContainer sx={{marginTop:'20px'}} component={Paper}>
-          <Table sx={{ minWidth: 500 }} aria-label="simple table">
-              <TableHead>
-                  <TableRow>
-                      <TableCell>OrderIDs</TableCell>
-                  </TableRow>
-              </TableHead>
-              <TableBody>
-                {recipientDetails.map((row) => (
-                    <TableRow key = {row}
-                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-                        <TableCell>{row}</TableCell>
-                        <TableCell align="right">
-                        </TableCell>
-                        <TableCell>
-                        </TableCell>
-                    </TableRow>
-                ))
-                }
-                {recipientDetails.length===0 && 
-                 <Alert severity="info">If there is any order yet to receive first fill the form for corresponding orderID.</Alert>
-                }
-                </TableBody>
-          </Table>
-      </TableContainer> */}
       <TableContainer>
         <Table
         sx={{ minWidth: 700 }}
@@ -156,18 +103,20 @@ function GuardSearchPage () {
 
         </Table>
       </TableContainer>
+      <Button   
+              variant="outline"
+              sx={{
+                size:"small",
+                marginTop: "20px",
+                backgroundColor: "#e3f2fd",
+                mt: 1,
+                color: "#0d47a1",
+              }}
+            >
+              Send OTP
+
+    </Button>
     </Paper>
-    
-      {/* <Button variant="contained" endIcon={<SendIcon />} onClick={sendVerificationCode}>
-        Send OTP
-      </Button>
-      <input
-        type="text"
-        placeholder="Enter verification code"
-        value={verificationCode}
-        onChange={e => setVerificationCode(e.target.value)}
-      />
-      <button onClick={verifyCode}>Verify Code</button> */}
     </>
   );
 };

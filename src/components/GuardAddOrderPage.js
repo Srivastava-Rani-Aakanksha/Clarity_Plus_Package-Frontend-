@@ -84,7 +84,7 @@ function GuardAddOrderPage() {
         <TableContainer component={Paper}>
           <Table
             component="form"
-            onSubmit={handleSubmit}
+            // onSubmit={handleSubmit}
             sx={{ minWidth: 700 }}
             aria-label="customized table"
           >
@@ -155,8 +155,10 @@ function GuardAddOrderPage() {
             >
               Add more +
             </Button>
-            <Button
-              type="submit"
+            
+          </Table>
+          <Button
+              onClick={handleSubmit}
               fullWidth
               variant="outline"
               sx={{
@@ -168,9 +170,9 @@ function GuardAddOrderPage() {
             >
               Submit Details
             </Button>
-          </Table>
+          
         </TableContainer>
-      </Paper>
+        </Paper> 
     </>
   );
 }
