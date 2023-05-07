@@ -69,7 +69,7 @@ function GuardSearchPage () {
       setOpen(true);
       e.preventDefault();
       console.log('Sending OTP for institute ID:', searchID);
-      const response = await axios.get(`http://localhost:9001/order/emailOfInstituteID/${searchID}/`)
+      const response = await axios.get(`http://localhost:9003/order/emailOfInstituteID/${searchID}/`)
       .then(response => {
           console.log(response.data);
       })
@@ -90,7 +90,7 @@ function GuardSearchPage () {
     const handleVerifyOTP = async(e) => {
       e.preventDefault();
       console.log('Verifying OTP for institute ID:', searchID);
-      const response = await axios.post(`http://localhost:9001/order/verifyOtp/${searchID}/${otp}`)
+      const response = await axios.post(`http://localhost:9003/order/verifyOtp/${searchID}/${otp}`)
       .then(response => {
           console.log(response.data);
           if(response.data === "OTP Verified!"){
@@ -108,7 +108,7 @@ function GuardSearchPage () {
     const handleSearch = async(e) => {
       e.preventDefault();
       console.log('Searching for institute ID:', searchID);
-      const response = await axios.get(`http://localhost:9001/order/ordersOfInstituteID/${searchID}/`)
+      const response = await axios.get(`http://localhost:9003/order/ordersOfInstituteID/${searchID}/`)
       .then(response => {
           console.log(response.data);
           setRecipientDetails(response.data);
