@@ -52,10 +52,19 @@ function GuardDashboard() {
                 textDecoration: 'underline',
                 fontSize: '1.2rem',
                 marginTop:"20px",}}  href="/searchInstituteID">
-                Search By ID 
+                Hand-over Parcel(s)
                 <Avatar sx={{ bgcolor:'#9e9e9e',marginLeft:'10px', width: 35, height: 35 }} variant="rounded">
                 <SearchIcon />
             </Avatar> 
+            </Button>
+            <Button sx={{ 
+              fontWeight: 700,
+              color: 'white',
+              textDecoration: 'underline',
+              fontSize: '1.2rem',
+              marginTop:"20px",
+              marginRight: "20px"}} href="/">
+            Logout
             </Button>
             
             </div>

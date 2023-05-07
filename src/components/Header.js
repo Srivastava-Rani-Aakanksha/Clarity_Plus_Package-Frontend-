@@ -5,6 +5,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import imgPath from "./Images/unnamed.jpg"
+import {Button} from "@mui/material";
 
 const Header=()=> {
   return (
@@ -18,6 +19,15 @@ const Header=()=> {
             Clarity Plus Package
           </Typography>
           </a>
+          <Button sx={{ 
+            fontWeight: 700,
+            color: 'white',
+            textDecoration: 'underline',
+            fontSize: '1.2rem',
+            marginTop:"20px",
+            marginLeft: "650px"}} href="/">
+            Logout
+            </Button>
           <img
             src= {imgPath}
             style={{ width: 160, height: 90, marginLeft: 'auto' }}
