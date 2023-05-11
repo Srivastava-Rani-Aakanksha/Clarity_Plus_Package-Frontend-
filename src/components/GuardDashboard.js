@@ -57,7 +57,7 @@ function GuardDashboard() {
                 <SearchIcon />
             </Avatar> 
             </Button>
-            <Button sx={{ 
+            <Button variant="outlined" sx={{ 
               fontWeight: 700,
               color: 'white',
               textDecoration: 'underline',
