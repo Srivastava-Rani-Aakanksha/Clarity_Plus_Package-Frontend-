@@ -140,7 +140,7 @@ function GuardSearchPage () {
             <TableHead>
               <TableRow>
                 <StyledTableCell align="center">Order Id</StyledTableCell>
-                <StyledTableCell align="center">Retailer</StyledTableCell>
+                {/* <StyledTableCell align="center">Retailer</StyledTableCell> */}
               </TableRow>
             </TableHead>
             <TableBody>
@@ -148,7 +148,7 @@ function GuardSearchPage () {
                       <TableRow key = {row}
                           sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
                           <TableCell align="center">{row}</TableCell>
-                          <TableCell align="center"></TableCell>
+                          {/* <TableCell align="center"></TableCell> */}
                       </TableRow>
                   ))
                 }

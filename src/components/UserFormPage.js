@@ -74,6 +74,7 @@ const UserFormPage = () => {
         setRetailer("");
         setOtherRetailer("");
         alert("Data submitted successfully !");
+        window.location.reload()
       })
       .catch((error) => {
         console.error(error);

@@ -57,15 +57,18 @@ function GuardAddOrderPage() {
   };
 
   const handleSubmit = (e) => {
-    // e.preventDefault();
+    //e.preventDefault();
     const dataToSend = inputField.map((field) =>
       createData(field.orderid, field.firstname, field.lastname, field.retailer)
     );
     console.log(dataToSend);
     const response = axios.post(
-      `http://localhost:9003/order/saveorderdata`,
+      `http://localhost:9001/order/saveorderdata`,
       dataToSend
-    );
+    ).then((response)=>{
+      alert("Data submitted successfully !");
+      window.location.reload()
+    });
   };
 
   const addFields = (event) => {
