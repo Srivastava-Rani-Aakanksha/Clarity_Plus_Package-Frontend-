@@ -182,7 +182,7 @@ function SearchLogByDate (){
           sx={{ marginTop: "40px", marginLeft: "20px" ,marginRight: "20px" }}
           >
         <TableContainer>
-        <Table sx={{ minWidth:700 ,marginTop:'40px' }} aria-label="simple table">
+        <Table sx={{ minWidth:700 }} aria-label="simple table">
           <TableHead>
             <TableRow>
               <StyledTableCell align="center">Order Id</StyledTableCell>
