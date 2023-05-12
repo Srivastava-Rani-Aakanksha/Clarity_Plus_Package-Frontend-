@@ -62,7 +62,7 @@ const UserFormPage = () => {
     }
 
     const response = axios
-      .post(`http://localhost:9002/recipient/savedata`, data)
+      .post(`http://localhost:9003/recipient/savedata`, data)
       .then((response) => {
         console.log(response);
         setFirstName("");
@@ -74,6 +74,7 @@ const UserFormPage = () => {
         setRetailer("");
         setOtherRetailer("");
         alert("Data submitted successfully !");
+        window.location.reload()
       })
       .catch((error) => {
         console.error(error);

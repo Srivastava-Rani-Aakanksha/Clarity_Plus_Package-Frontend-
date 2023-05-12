@@ -57,7 +57,7 @@ function GuardAddOrderPage() {
   };
 
   const handleSubmit = (e) => {
-    // e.preventDefault();
+    //e.preventDefault();
     const dataToSend = inputField.map((field) =>
       createData(field.orderid, field.firstname, field.lastname, field.retailer)
     );
@@ -65,7 +65,10 @@ function GuardAddOrderPage() {
     const response = axios.post(
       `http://localhost:9001/order/saveorderdata`,
       dataToSend
-    );
+    ).then((response)=>{
+      alert("Data submitted successfully !");
+      window.location.reload()
+    });
   };
 
   const addFields = (event) => {
