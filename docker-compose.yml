@@ -1,7 +1,7 @@
 version: "3"
 services:
   serviceregistry:
-    image: isharani21/claritypluspackage_backend:springCloud_v2 
+    image: isharani21/claritypluspackage_backend:springCloud_v3 
     container_name: serviceregistry
     ports:
       - "8761:8761"
@@ -9,7 +9,7 @@ services:
       - packagemgmt-network
   
   apigateway:
-    image: isharani21/claritypluspackage_backend:APIgateway_v2 
+    image: isharani21/claritypluspackage_backend:APIgateway_v3 
     container_name: apigateway
     environment:
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://serviceregistry:8761/eureka/
@@ -21,7 +21,7 @@ services:
       - serviceregistry
   
   orderservice:
-    image: isharani21/claritypluspackage_backend:order_v2
+    image: isharani21/claritypluspackage_backend:order_v3
     container_name: orderservice
     ports:
       - "9001:9001"
@@ -51,7 +51,7 @@ services:
       - packagemgmt-network
   
   recipientservice:
-    image: isharani21/claritypluspackage_backend:recipient_v2
+    image: isharani21/claritypluspackage_backend:recipient_v3
     container_name: recipientservice
     ports:
       - "9002:9002"
@@ -81,7 +81,7 @@ services:
       - packagemgmt-network
 
   frontend:
-    image: isharani21/claritypluspackage:frontend_v2  
+    image: isharani21/claritypluspackage:frontend_v3  
     ports:
       - "3000:3000"
     networks:
