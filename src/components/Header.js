@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
-import imgPath from "./Images/unnamed.jpg"
+import imgPath from "./Images/CollegeLogo.jpg"
 import {Button} from "@mui/material";
 
 const Header=()=> {
