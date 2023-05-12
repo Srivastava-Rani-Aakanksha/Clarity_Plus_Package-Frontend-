@@ -85,7 +85,7 @@ function SearchLogByDate (){
         if(isToggled === false){
             const searchToUpper = search.toUpperCase();
             console.log(searchToUpper);
-            await axios.get(`http://localhost:9001/order/search/logsbyID/${searchToUpper}/`)
+            await axios.get(`http://localhost:9003/order/search/logsbyID/${searchToUpper}/`)
             .then((response)=>{
             setVisibleTableID(true);
             console.log(response.data);
@@ -100,7 +100,7 @@ function SearchLogByDate (){
             console.log("Yasha");
             const formattedDate = dayjs(dateSelected).format('YYYY-MM-DD');
             console.log(formattedDate);
-            await axios.get(`http://localhost:9001/order/search/logsbydate/${formattedDate}/`)
+            await axios.get(`http://localhost:9003/order/search/logsbydate/${formattedDate}/`)
             .then((response)=>{
             setVisibleTableDate(true);
             console.log(response.data);
@@ -182,7 +182,7 @@ function SearchLogByDate (){
           sx={{ marginTop: "40px", marginLeft: "20px" ,marginRight: "20px" }}
           >
         <TableContainer>
-        <Table sx={{ minWidth:700 ,marginTop:'40px' }} aria-label="simple table">
+        <Table sx={{ minWidth:700 }} aria-label="simple table">
           <TableHead>
             <TableRow>
               <StyledTableCell align="center">Order Id</StyledTableCell>

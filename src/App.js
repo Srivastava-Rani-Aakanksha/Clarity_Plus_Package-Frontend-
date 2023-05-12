@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import GuardLandingPage from './components/GuardLandingPage';
 import GuardSearchPage from './components/GuardSearchPage';
 import SearchLogByDate from './components/SearchLogByDate';
+import Login from './components/Login';
 
 
 export const theme = createTheme({
@@ -39,6 +40,7 @@ function App() {
     <>
     <BrowserRouter>
       <Routes>
+        <Route exact path='/' element={<Login/>}/>
         <Route exact path='/userformpage' element={<UserFormPage/>}/>
         <Route exact path='/guardaddorderpage' element={<GuardAddOrderPage/>}/> 
         <Route exact path='/searchInstituteID' element={<GuardSearchPage/>}/>
